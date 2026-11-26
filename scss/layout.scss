@@ -9,14 +9,14 @@ body {
   // border: 1px solid #f00;
 }
 .heading02 {
+  margin-bottom: 30px;
   font-size: clamp(20px, 1.8vw, 24px);
   font-weight: 700;
-  margin-bottom: 30px;
 }
 .heading03 {
-  line-height: 1.2;
   font-size: clamp(24px, 2.4vw, 42px);
   font-weight: 700;
+  line-height: 1.2;
 }
 .header {
   display: flex;
@@ -94,18 +94,18 @@ body {
     }
     .pagination {
       position: absolute;
+      top: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
       bottom: 100px;
       left: 200px;
-      top: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
-      width: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
       z-index: 2;
+      width: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
       .swiper-pagination-bullet {
         width: 20px;
         height: 20px;
-        border-radius: 100px;
-        opacity: 1;
         background: none;
         border: 3px solid #fff;
+        border-radius: 100px;
+        opacity: 1;
         transition: all 0.25s ease;
         &-active {
           width: 100px;
@@ -116,27 +116,34 @@ body {
   }
 }
 .section01 {
+  position: relative;
   padding: 200px 0;
   background-color: #e3e8ed;
+  background-image: url(../images/main/sec2_bg.png);
+  background-position: 500px -200px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  overflow: hidden;
   .container {
-    position: relative;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     .title-box {
       position: absolute;
       left: 0;
       p {
+        margin-top: 30px;
         font-size: 18px;
         color: $light-gray;
-        margin-top: 30px;
       }
     }
     .img-box {
-      overflow: hidden;
+      width: 30vw;
       aspect-ratio: 1/1.3;
       border-radius: 50px;
-      width: 30vw;
+      overflow: hidden;
       img {
         width: 100%;
         height: 100%;
@@ -155,11 +162,11 @@ body {
           //a는 display가 inline이라서 after가 먹지 않는다. 만약 block을 주면 부모 넓이 따라가므로 width:100%가 된다.
           //이때 자기자신만큼의 넓이를 가지면서 block요소로 바꿔주는게 inline-block이다.
           &:after {
-            content: "";
             display: block;
             width: 0;
             height: 2px;
             background-color: $dark-gray;
+            content: "";
             transition: all 0.5s ease;
           }
           &:hover:after {
@@ -168,5 +175,92 @@ body {
         }
       }
     }
+  }
+}
+.section02 {
+  padding: 200px 0;
+  background-color: $main-color;
+  background-image: url(../images/main/sec3_bgIcon.png);
+  background-position: left 0px top 200px;
+  background-repeat: no-repeat;
+  .title-box {
+    color: #fff;
+    text-align: center;
+    .desc {
+      margin: 20px 0;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 0.5;
+    }
+    .alert {
+      opacity: 0.5;
+    }
+  }
+  .list {
+    display: flex;
+    gap: 20px;
+    margin-top: 100px;
+    li {
+      flex-basis: 25%;
+      padding: 50px;
+      background-color: #eee;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      &:hover {
+        transform: translateY(-20px);
+      }
+      .upper {
+        display: flex;
+        flex-direction: column;
+        .category {
+          font-size: 24px;
+          color: $main-color;
+        }
+        .icon-box {
+          display: inline-flex;
+          align-self: start;
+          margin-top: 20px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 100px;
+        }
+      }
+      .lower {
+        margin-top: 100px;
+        .title {
+          font-size: 36px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 18px;
+          color: $gray;
+        }
+      }
+    }
+  }
+}
+.rolling-txt {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  width: max-content;
+  font-size: clamp(60px, 10vw, 200px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  animation: marquee 30s linear infinite;
+  div {
+    flex-shrink: 0;
+    padding-right: 40px;
+    white-space: nowrap;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
