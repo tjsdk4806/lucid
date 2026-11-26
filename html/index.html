@@ -11,6 +11,102 @@
     <meta property="og:site_name" content="루시드코리아" />
     <title>LUCID</title>
     <link rel="shortcut icon" href="../images/common/favicon.png" type="images/x-icon" />
+    <!-- css 초기화 -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <h1 class="logo">
+        <a href=""><img src="../images/common/logo.png" alt="" /></a>
+      </h1>
+      <nav class="gnb">
+        <ul class="list">
+          <li><a href="">회사소개</a></li>
+          <li><a href="">LK렌즈</a></li>
+          <li><a href="">RGP렌즈</a></li>
+          <li><a href="">백내장 수술용 제품</a></li>
+          <li><a href="">렌즈관리용액</a></li>
+          <li><a href="">PRESS</a></li>
+          <li><a href="">CAREER</a></li>
+          <li><a href="">병원검색</a></li>
+        </ul>
+      </nav>
+      <div class="util-menu">
+        <div class="language-box">
+          <div class="language">KR</div>
+          <ul class="list">
+            <li><a href="">KR</a></li>
+            <li><a href="">EN</a></li>
+            <li><a href="">CN</a></li>
+          </ul>
+        </div>
+        <div class="all-menu">
+          <button class="btn">
+            <span class="material-symbols-outlined"> menu </span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="main-visual">
+      <div class="mask">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide visual01"><video src="../images/main/main_video.mp4" autoplay muted loop></video></div>
+          <div class="swiper-slide visual02"></div>
+        </div>
+        <div class="pagination"></div>
+      </div>
+    </div>
+    <section class="section01">
+      <div class="container">
+        <div class="title-box">
+          <h2 class="heading02">Ortho-K렌즈</h2>
+          <h3 class="heading03">
+            수면 중 착용하는 <br />
+            시력교정렌즈
+          </h3>
+          <p>
+            수면 중 착용하여 각막의 형태를 부드럽게 교정해, <br />
+            낮 동안 선명한 시력을 유지하도록 돕는 <br />
+            연속착용하드콘택트렌즈입니다.
+          </p>
+        </div>
+        <div class="img-box">
+          <img src="../images/main/sec2_img1.jpg" alt="" />
+        </div>
+        <ul class="list">
+          <li><a href="">Lucid Prime 렌즈</a></li>
+          <li><a href="">LK 렌즈</a></li>
+          <li><a href="">Ortho-K LK-Lens PREMIER 렌즈</a></li>
+          <li><a href="">Ortho-K LK-Lens Toric PREMIER 렌즈</a></li>
+        </ul>
+      </div>
+      <div class="rolling-txt">
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+      </div>
+    </section>
+    <script>
+      const mainSlider = new Swiper(".main-visual .mask", {
+        pagination: {
+          el: ".main-visual .pagination",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
 </html>

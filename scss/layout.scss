@@ -1,0 +1,172 @@
+@import "vars";
+
+body {
+  font-family: "pretendard", sans-serif;
+}
+.container {
+  width: calc(100% - 200px);
+  margin: auto;
+  // border: 1px solid #f00;
+}
+.heading02 {
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.heading03 {
+  line-height: 1.2;
+  font-size: clamp(24px, 2.4vw, 42px);
+  font-weight: 700;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  z-index: 10;
+  // 포지션이 앱솔루트나 픽스드 일때 left right 사용할수있다.
+  // width: calc(100% - 40px);
+  background-color: #fff;
+  border-radius: 20px;
+  .logo {
+    position: absolute;
+    left: 70px;
+    a {
+      display: flex;
+      align-items: center;
+      height: $header-height;
+    }
+  }
+  .util-menu {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 50px;
+    height: $header-height;
+    .language-box {
+      .list {
+        display: none;
+      }
+    }
+    .all-menu {
+      .btn {
+        display: flex;
+        padding: 0;
+      }
+    }
+  }
+  .gnb {
+    .list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          height: $header-height;
+          padding: 0 40px;
+          // border: 1px solid #f00;
+        }
+      }
+    }
+  }
+}
+.main-visual {
+  .mask {
+    overflow: hidden;
+    .visual01 {
+      video {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    }
+    .visual02 {
+      height: 100vh;
+      background-image: url(../images/main/main_visual1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .pagination {
+      position: absolute;
+      bottom: 100px;
+      left: 200px;
+      top: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
+      width: auto; //원래 가지고 있는 css값이 있다. swiper-bundle.min.css에 미리 정의되어 있다.
+      z-index: 2;
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        opacity: 1;
+        background: none;
+        border: 3px solid #fff;
+        transition: all 0.25s ease;
+        &-active {
+          width: 100px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+.section01 {
+  padding: 200px 0;
+  background-color: #e3e8ed;
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .title-box {
+      position: absolute;
+      left: 0;
+      p {
+        font-size: 18px;
+        color: $light-gray;
+        margin-top: 30px;
+      }
+    }
+    .img-box {
+      overflow: hidden;
+      aspect-ratio: 1/1.3;
+      border-radius: 50px;
+      width: 30vw;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .list {
+      position: absolute;
+      right: 0;
+      font-size: 30px;
+      font-weight: 500;
+      li {
+        margin-bottom: 10px;
+        a {
+          display: inline-block;
+          //a는 display가 inline이라서 after가 먹지 않는다. 만약 block을 주면 부모 넓이 따라가므로 width:100%가 된다.
+          //이때 자기자신만큼의 넓이를 가지면서 block요소로 바꿔주는게 inline-block이다.
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: $dark-gray;
+            transition: all 0.5s ease;
+          }
+          &:hover:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
